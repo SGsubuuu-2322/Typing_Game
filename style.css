@@ -58,3 +58,45 @@ button:focus {
 .settings.hide {
   transform: translateY(-100%);
 }
+
+.container {
+  background-color: #34495e;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 6px;
+  width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+h2 {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 6px;
+  margin: 0 0 40px;
+}
+
+h1 {
+  margin: 0;
+}
+
+input {
+  border: 0;
+  font-size: 16px;
+  padding: 12px 15px;
+  width: 300px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.score-container {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+}
+.time-container {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+}
