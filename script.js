@@ -37,6 +37,10 @@ let randomWord;
 let score = 0;
 let time = 10;
 
+text.focus();
+
+const timeInterval = setInterval(updateTime, 1000);
+
 function getRandomWord() {
   return words[Math.floor(Math.random() * words.length)];
 }
@@ -49,6 +53,26 @@ function addWordToDom() {
 function updateScore() {
   score++;
   scoreEl.innerText = score;
+}
+
+function updateTime() {
+  time--;
+  timeEl.innerText = time + "s";
+
+  if (time === 0) {
+    clearInterval(timeInterval);
+    gameOver();
+  }
+}
+
+function gameOver() {
+  endgameEl.innerHTML = `
+        <h1>Game Over</h1>
+        <p>Your final score is: ${score}</p>
+        <button onClick="location.reload()">Reload</button>
+    `;
+
+  endgameEl.style.display = "flex";
 }
 
 addWordToDom();
