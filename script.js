@@ -3,7 +3,7 @@ const text = document.getElementById("text");
 const scoreEl = document.getElementById("score");
 const timeEl = document.getElementById("time");
 const endgameEl = document.getElementById("end-game-container");
-const settingsBtn = document.getElementById("settings-btn");
+const settingsBtn = document.getElementById("setting-btn");
 const settings = document.getElementById("settings");
 const settingsForm = document.getElementById("settings-form");
 const difficultySelect = document.getElementById("difficulty");
@@ -31,3 +31,19 @@ const words = [
   "drag",
   "loving",
 ];
+
+let randomWord;
+
+let score;
+let time = 10;
+
+function getRandomWord() {
+  return words[Math.floor(Math.random() * words.length)];
+}
+
+function addWordToDom() {
+  randomWord = getRandomWord();
+  word.innerText = randomWord;
+}
+
+addWordToDom();
