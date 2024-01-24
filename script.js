@@ -37,6 +37,11 @@ let randomWord;
 let score = 0;
 let time = 10;
 
+let difficulty =
+  localStorage.getItem("difficulty") !== null
+    ? localStorage.getItem("difficulty")
+    : "medium";
+
 text.focus();
 
 const timeInterval = setInterval(updateTime, 1000);
@@ -83,5 +88,16 @@ text.addEventListener("input", (e) => {
     e.target.value = "";
     addWordToDom();
     updateScore();
+
+    time += 5;
+    updateTime();
   }
+});
+
+settingsBtn.addEventListener("click", () => settings.classList.toggle("hide"));
+
+settingsForm.addEventListener("change", (e) => {
+  difficulty = e.target.value;
+
+  localStorage.setItem("difficulty", difficulty);
 });
